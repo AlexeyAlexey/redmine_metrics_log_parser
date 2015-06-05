@@ -19,8 +19,10 @@ while x = gets
     sql = ""
     name = /=>name=(.*?)<=/.match(x)
     if name[1] == "process_action.action_controller"
-      values = /=>name=(.*?)<==>transaction_id=(.*?)<==>controller=(.*?)<==>action=(.*?)<==>status=(.*?)<==>start_time=(.*?)<==>end_time=(.*?)<==>duration=(.*?)<==>view_runtime=(.*?)<==>db_runtime=(.*?)<==>payload=(.*?)<=/.match(x)
-      sql = "INSERT INTO action_controller_loggers (transaction_id, 
+      values = /=>name=(.*?)<==>transaction_id=(.*?)<==>current_user=(.*?)<==>controller=(.*?)<==>action=(.*?)<==>status=(.*?)<==>start_time=(.*?)<==>end_time=(.*?)<==>duration=(.*?)<==>view_runtime=(.*?)<==>db_runtime=(.*?)<==>payload=(.*?)<=/.match(x)
+      
+      sql = "INSERT INTO action_controller_loggers (transaction_id,
+                                                    `current_user`,
                                                     controller,
                                                     action,
                                                     status,
@@ -32,14 +34,15 @@ while x = gets
                                                     payload) 
                                                   VALUES('#{values[2]}',
                                                          '#{values[3]}',
-                                                         '#{values[4]}', 
+                                                         '#{values[4]}',
                                                          '#{values[5]}', 
-                                                         '#{values[6]}',
-                                                         '#{values[7]}', 
+                                                         '#{values[6]}', 
+                                                         '#{values[7]}',
                                                          '#{values[8]}', 
                                                          '#{values[9]}', 
                                                          '#{values[10]}', 
-                                                         '#{values[11]}' );"
+                                                         '#{values[11]}', 
+                                                         '#{values[12]}' );"
     else
       values = /=>name=(.*?)<==>transaction_id=(.*?)<==>start_time=(.*?)<==>end_time=(.*?)<==>duration=(.*?)<==>payload=(.*?)<=/.match(x)
       sql = "INSERT INTO action_view_loggers (transaction_id, 
