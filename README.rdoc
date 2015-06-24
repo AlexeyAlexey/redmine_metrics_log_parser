@@ -1,0 +1,16 @@
+= redmine_metrics
+
+
+  http://edgeguides.rubyonrails.org/active_support_instrumentation.html
+  http://rusrails.ru/active-support-instrumentation
+
+
+tail -F action_controller_view_logger.log | ruby -n redmine_metrics_log_parser.rb
+
+Log parser https://github.com/AlexeyAlexey/redmine_metrics_log_parser
+
+http://manpages.ubuntu.com/manpages/intrepid/man1/tail.1.html
+
+  http://en.wikipedia.org/wiki/Pipeline_(Unix)#pipe_character
+  http://en.wikipedia.org/wiki/Tail_(Unix)
+  http://fsl.fmrib.ox.ac.uk/fslcourse/unix_intro/pipe.html
