@@ -33,7 +33,7 @@ while x = gets
       else
         status = 0
       end
-       
+
       sql = "INSERT INTO action_controller_#{status}_loggers (transaction_id,
                                                     `current_user`,
                                                     controller,
