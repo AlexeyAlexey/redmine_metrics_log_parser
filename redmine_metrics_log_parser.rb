@@ -1,6 +1,4 @@
-require 'rubygems'  
-require 'active_record' 
-require 'byebug'
+require './boot'
 
 ActiveRecord::Base.establish_connection(  
   adapter:  "mysql2",
