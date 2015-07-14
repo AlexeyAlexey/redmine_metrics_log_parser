@@ -3,7 +3,6 @@ require 'bundler'
 Bundler.require(:default)
 
 
-require 'rack-flash'
 require 'active_record'
 #require 'mysql2'
 #require 'byebug'
