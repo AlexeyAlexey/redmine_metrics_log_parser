@@ -1,5 +1,5 @@
 class CreateActionController100Loggers < ActiveRecord::Migration
-  def change
+  def up
     create_table :action_controller_100_loggers do |t|
       t.string   :transaction_id
       t.string   :current_user,  default: ""   
@@ -16,7 +16,7 @@ class CreateActionController100Loggers < ActiveRecord::Migration
     add_index :action_controller_100_loggers, [:transaction_id]    
   end
 
-  def self.down
+  def down
     drop_table :action_controller_100_loggers
   end
 end

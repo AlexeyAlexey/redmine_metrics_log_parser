@@ -1,6 +1,6 @@
-adapter: mysql2
-database: redmine_clear_development
-host: localhost
-username: redmine_clear
+adapter:  mysql2
+database: redmine_test
+host:     localhost
+username: redmine
 password: ""
 encoding: utf8

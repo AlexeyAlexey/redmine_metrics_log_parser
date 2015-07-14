@@ -1,13 +1,16 @@
 require './boot'
 
-ActiveRecord::Base.establish_connection(  
-  adapter:  "mysql2",
-  database: "redmine_development",
-  host:     "localhost",
-  username: "redmine",
-  password: "",
-  encoding: "utf8"    
-)  
+#ActiveRecord::Base.establish_connection(  
+#  adapter:  "mysql2",
+#  database: "redmine_development",
+#  host:     "localhost",
+#  username: "redmine",
+#  password: "",
+#  encoding: "utf8"    
+#)  
+
+ActiveRecord::Base.establish_connection(YAML::load(File.open('config/database.yml')))
+
 
 while x = gets
   begin

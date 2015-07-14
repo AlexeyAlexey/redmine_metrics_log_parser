@@ -1,5 +1,5 @@
 class CreateActionViewLoggers < ActiveRecord::Migration
-  def change
+  def up
     create_table :action_view_loggers do |t|
       t.string   :transaction_id
       t.text     :payload
@@ -10,7 +10,7 @@ class CreateActionViewLoggers < ActiveRecord::Migration
     add_index :action_view_loggers, [:transaction_id]
   end
 
-  def self.down
+  def down
     drop_table :action_view_loggers
   end
 end
