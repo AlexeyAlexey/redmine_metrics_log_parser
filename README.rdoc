@@ -14,3 +14,8 @@ http://manpages.ubuntu.com/manpages/intrepid/man1/tail.1.html
   http://en.wikipedia.org/wiki/Pipeline_(Unix)#pipe_character
   http://en.wikipedia.org/wiki/Tail_(Unix)
   http://fsl.fmrib.ox.ac.uk/fslcourse/unix_intro/pipe.html
+
+
+
+DB migration 
+  rake db::migrate

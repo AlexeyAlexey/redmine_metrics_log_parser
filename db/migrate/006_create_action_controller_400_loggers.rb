@@ -1,6 +1,6 @@
 class CreateActionController400Loggers < ActiveRecord::Migration
   def up
-    create_table :action_controller_400_loggers do |t|
+    create_table :action_controller_400_loggers, :options => 'DEFAULT CHARSET=utf8' do |t|
       t.string   :transaction_id
       t.string   :current_user,  default: ""   
       t.string   :controller
@@ -9,9 +9,9 @@ class CreateActionController400Loggers < ActiveRecord::Migration
       t.text     :payload
       t.datetime :start_time
       t.datetime :end_time
-      t.column   :view_runtime, 'FLOAT UNSIGNED'
-      t.column   :db_runtime,   'FLOAT UNSIGNED'
-      t.column   :duration,     'FLOAT UNSIGNED'
+      t.float   :view_runtime
+      t.float   :db_runtime
+      t.float   :duration
     end
     add_index :action_controller_400_loggers, [:transaction_id]    
   end

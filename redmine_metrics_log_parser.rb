@@ -74,7 +74,7 @@ while x = gets
     ActiveRecord::Base.connection.execute(sql) unless sql.empty?
     
   rescue Exception => e
-     #puts "#{e}"	
+     puts "#{e}"	
      #puts "#{e.backtrace.inspect}"
   end     
 end
