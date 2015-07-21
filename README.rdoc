@@ -19,3 +19,10 @@ http://manpages.ubuntu.com/manpages/intrepid/man1/tail.1.html
 
 DB migration 
   rake db::migrate
+
+
+
+  find the pid
+    ps ax | grep ruby
+  track specific process using top command
+    top -pXXXX
