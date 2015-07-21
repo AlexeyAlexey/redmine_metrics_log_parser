@@ -2,7 +2,8 @@ class CreateActionController0Loggers < ActiveRecord::Migration
   def up
     create_table :action_controller_0_loggers, :options => 'DEFAULT CHARSET=utf8' do |t|
       t.string   :transaction_id
-      t.string   :current_user,  default: ""   
+      t.string   :current_user,  default: "" 
+      t.integer  :user_id  
       t.string   :controller
       t.string   :action
       t.integer  :status,       limit: 2, default: 0
@@ -13,7 +14,6 @@ class CreateActionController0Loggers < ActiveRecord::Migration
       t.float   :db_runtime
       t.float   :duration
     end
-    add_index :action_controller_0_loggers, [:transaction_id]    
   end
 
   def down

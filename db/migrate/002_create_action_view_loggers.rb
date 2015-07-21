@@ -5,9 +5,10 @@ class CreateActionViewLoggers < ActiveRecord::Migration
       t.text     :payload
       t.datetime :start_time
       t.datetime :end_time
-      t.float   :duration
+      t.float    :duration
+      t.index    :transaction_id
     end
-    add_index :action_view_loggers, [:transaction_id]
+    #add_index :action_view_loggers, [:transaction_id]
   end
 
   def down
